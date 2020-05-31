@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <title>张璐</title>
+    <link rel="shout icon" href="Resource/icon.png" >
+    <!--href 是路径-->
+    <script type="text/javascript" src="CommonMethod.js"></script>
+    <!--加外部样式表-->
+    <link rel="stylesheet" href="ExternalStyle.css">
+    <style>
+        article{
+            margin: 20px;
+            padding-bottom: 40px;
+
+
+        }
+        h3{
+            color: red;
+            font-size: 18px;
+            border-bottom:1px solid #dddddd ;
+            padding-bottom: 10px;
+        }
+        h4{
+            font-size: 14px;
+        }
+
+        article p{
+            /*首行缩进*/
+            text-indent: 2em;
+            font-size: 12px;
+            /*行高*/
+            line-height: 2em;
+
+        }
+        a span{
+            display: block;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+<header class="DS_header">
+    <span>平台风采</span>
+</header>
+
+<!--第二部分：图片-->
+<section class="DS_second_section">
+    <img src="Resource/banner4.png" alt="">
+</section>
+
+
+
+
+
+<article>
+    <h3 id="title"></h3>
+    <h4 id="subTitle"></h4>
+    <p id="info"></p>
+
+</article>
+<script>
+
+    requestMethod('get','aboutus','',function (returnStr) {
+
+        var h3 = document.getElementById("title");
+        var h4 = document.getElementById("subTitle");
+        var p = document.getElementById("info");
+
+        h3.innerHTML = returnStr.title;
+        h4.innerHTML = returnStr.subTitle;
+        p.innerHTML = returnStr.info;
+    });
+
+    // //建立与服务端链接（找到哪个服务器要数据）
+    // xhr.open('get','https://mockapi.eolinker.com/2ZhGVxjacb39010e6753bd9c02ee803e6e3bfeab6e8007c/aboutus');
+    //
+    // //设置头信息，告诉服务器让数据以表单的形式传递过去
+    // xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
+    //
+    // //向服务端发送请求
+    // xhr.send();
+    //
+    // //接收服务端返回的数据
+    // xhr.onreadystatechange = function () {
+    //     //xhr.readyState == 4 代表ajax数据请求完成，xhr.status == 200 代表数据返回成功
+    //     if (xhr.readyState == 4 && xhr.status == 200) {
+    //         var responseData = JSON.parse(xhr.responseText);
+    //         var obj = responseData.data;
+    //         //获取控件信息
+    //         var h3 = document.getElementById("title");
+    //         var h4 = document.getElementById("subTitle");
+    //         var p = document.getElementById("info");
+    //
+    //         h3.innerHTML = obj.title;
+    //         h4.innerHTML = obj.subTitle;
+    //         p.innerHTML = obj.info;
+    //     }
+    // }
+
+
+</script>
+
+<footer>
+    <a href="DropletService.html">
+        <img src="Resource/nav10.png" alt="">
+        <span>小滴服务</span>
+    </a>
+    <a href="EnterpriseProject.html">
+        <img src="Resource/nav20.png" alt="">
+        <span>企业项目</span>
+    </a>
+    <a href="ServiceProcess.html">
+        <img src="Resource/nav30.png" alt="">
+        <span>服务流程</span>
+    </a>
+    <a href="Platform.html">
+        <img src="Resource/nav41.png" alt="">
+        <span style="color: red">平台风采</span>
+    </a>
+    <a href="MyDroplet.html">
+        <img src="Resource/nav50.png" alt="">
+        <span>我的小滴</span>
+    </a>
+</footer>
+</body>
+</html>
